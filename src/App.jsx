@@ -1,16 +1,17 @@
-import { FormProvider } from './context/FormContext'
-import JobApplicationForm from './components/JobApplicationForm'
+import { FormProvider } from './context/FormContext';
+import JobApplicationForm from './components/JobApplicationForm';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50 p-4">
-      <div className='max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6'>
+    <div className="app-container">
+      <div className="form-wrapper">
+        <h1 className="form-title">Job Application Portal</h1>
         <FormProvider>
           <JobApplicationForm />
         </FormProvider>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

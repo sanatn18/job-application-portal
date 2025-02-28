@@ -2,9 +2,9 @@ import { createContext, useContext, useState } from "react";
 
 const FormContext = createContext();
 
-export const useFormContext = () => useContext(FormContext);
+export const useFormContext = () => useContext(FormContext); //for easier access to the context in components
 
-export const FormProvider = ({children}) =>{
+export const FormProvider = ({children}) =>{ //wraps children components,makes the form state and functions available to all children components
     const [currentStep, setCurrentStep] = useState(1);
 
     const [formData, setFormData] = useState({
@@ -31,24 +31,6 @@ export const FormProvider = ({children}) =>{
 
     const prevStep = () =>{
         setCurrentStep(prev=>prev-1);
-    }
-
-    const resetForm = () =>{
-        setCurrentStep(1);
-        setFormData({
-            firstName:'',
-            lastName:'',
-            email:'',
-            phone:'',
-
-            resume:null,
-            portfolio:null,
-
-            experience:'',
-            skills:'',
-            reasonForApplying:'',
-        });
-    
     }
 
     return(
